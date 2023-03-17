@@ -27,3 +27,19 @@ variable "sample3" {
 }
 
 #These two data types default does not need the quotes.
+
+# Map variable
+variable "sample5" {
+  default = {
+    string  = "hello"
+    number  = 100
+    boolean = true
+  }
+}
+
+## Access a list value
+output "sample4" {
+  value = var.sample4[0]
+}
+
+
