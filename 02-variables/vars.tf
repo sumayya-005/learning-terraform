@@ -16,6 +16,7 @@ variable "sample1" {
   default = "Hello World"
 }
 
+#These two data types default does not need the quotes.
 # Number data type
 variable "sample2" {
   default = 100
@@ -26,7 +27,7 @@ variable "sample3" {
   default = true
 }
 
-#These two data types default does not need the quotes.
+
 
 # Map variable
 variable "sample5" {
@@ -42,4 +43,20 @@ output "sample4" {
   value = var.sample4[0]
 }
 
+## Access a Map value
+output "sample5" {
+  value = var.sample5["number"]
+}
+
+## Pick a variable from terraform.tfvars file
+variable "sample6" {}
+output "sample6" {
+  value = var.sample6
+}
+
+## Pick a variable from CLI
+variable "sample7" {}
+output "sample7" {
+  value = var.sample7
+}
 
