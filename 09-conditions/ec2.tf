@@ -62,3 +62,13 @@ Name = "allow_ssh"
 variable "create_sg" {
 default = true
 }
+
+resource "null_resource" "test" {
+  provisioner "local-exec" {
+    command = local.message
+  }
+}
+
+locals {
+  message = "echo hello world"
+}
